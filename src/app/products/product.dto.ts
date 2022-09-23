@@ -35,6 +35,11 @@ type example2 = Required<Product>;
 // Anidamiento de utility types
 // Podemos utilizar el anidamiento para poder fusionar las distintas características de los diferentes utility types.
 export interface FindProductDto extends Readonly<Partial<Omit<Product, 'tags'>>> {
+  // ¿Qué hace ReadonlyArray?
+// Tenemos muchos métodos de array que nos permiten mutar un array, pero en programación,
+// en general, se evita hacer mutaciones en un array por lo que se prefiere crear nuevos
+// estados para evitar efectos secundarios.
+// Para evitar estas mutaciones es que utilizamos a ReadonlyArray como un tipo de dato más.
   readonly tags: ReadonlyArray<string>;
 }
 
